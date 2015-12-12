@@ -691,7 +691,7 @@ body {
   width: 80px;
   height: 3px;
   margin: 30px auto 40px auto;
-  background-color: #FFCD00; }
+  background-color: #FDC409; }
 
 .header {
   background-color: #333;
@@ -712,7 +712,7 @@ body {
     font-weight: 300;
     line-height: 100px; }
     .top-bar .logo span {
-      color: #FFCD00;
+      color: #FDC409;
       font-size: 26px; }
   .top-bar .social-icons {
     float: right; }
@@ -731,8 +731,8 @@ body {
       border-radius: 50%;
       transition: 0.3s; }
       .top-bar .social-icons a:hover {
-        color: #FFCD00;
-        border-color: #FFCD00; }
+        color: #FDC409;
+        border-color: #FDC409; }
 
 .header-caption {
   margin-top: 120px; }
@@ -755,16 +755,16 @@ body {
     border-radius: 18px;
     transition: 0.3s; }
     .header-caption a:hover {
-      border-color: #FFCD00; }
+      border-color: #FDC409; }
   .header-caption .btn-view-service {
     border: 1px solid #fff; }
     .header-caption .btn-view-service:hover {
-      color: #FFCD00; }
+      color: #FDC409; }
   .header-caption .btn-live-contact {
     border: 1px solid #3498DB;
     background-color: #3498DB; }
     .header-caption .btn-live-contact:hover {
-      background-color: #FFCD00; }
+      background-color: #FDC409; }
 
 .btn-skip-header {
   display: block;
@@ -802,7 +802,7 @@ body {
     background-size: 190px 197px;
     transition: 0.3s; }
     .reserve-service .service-item:hover {
-      border-color: #FFCD00; }
+      border-color: #FDC409; }
   .reserve-service .service-cards {
     background-image: url(../images/icon-cards.png); }
   .reserve-service .service-foldings {
@@ -842,10 +842,10 @@ body {
     line-height: 34px;
     text-align: center;
     text-decoration: none;
-    background-color: #FFCD00;
+    background-color: #FDC409;
     transition: 0.3s; }
     .reserve-service .service-btn-reserve:hover {
-      background-color: #ebb900; }
+      background-color: #e9b000; }
 
 .service-more {
   text-align: center;
@@ -869,18 +869,18 @@ body {
     border-radius: 18px;
     transition: 0.3s; }
     .service-more a:hover {
-      border-color: #FFCD00; }
+      border-color: #FDC409; }
   .service-more .btn-view-service {
     color: #9daaab;
     border: 1px solid #9daaab; }
     .service-more .btn-view-service:hover {
-      color: #FFCD00; }
+      color: #FDC409; }
   .service-more .btn-live-contact {
     color: #fff;
     border: 1px solid #3498DB;
     background-color: #3498DB; }
     .service-more .btn-live-contact:hover {
-      background-color: #FFCD00; }
+      background-color: #FDC409; }
 
 .works {
   padding: 1px 0 80px 0;
@@ -902,7 +902,7 @@ body {
   border-radius: 7px;
   transition: 0.3s; }
   .works-slider .owl-page.active {
-    background-color: #FFCD00; }
+    background-color: #FDC409; }
 
 .works-slide-items {
   overflow: hidden; }
@@ -960,12 +960,12 @@ body {
 
 .contact {
   padding: 60px 0;
-  background-color: #FFCD00;
+  background-color: #FDC409;
   background-image: url(../images/world-map.png);
   background-position: center top;
   background-repeat: no-repeat;
   background-size: 800px 400px;
-  border-top: 1px solid #e1af00; }
+  border-top: 1px solid #dfa600; }
   .contact .contact-box {
     overflow: hidden;
     color: #fff; }
@@ -993,7 +993,7 @@ body {
     text-align: center;
     text-transform: uppercase; }
     .footer .copyright a {
-      color: #FFCD00;
+      color: #FDC409;
       text-decoration: none; }
       .footer .copyright a:hover {
         color: #3498DB; }
