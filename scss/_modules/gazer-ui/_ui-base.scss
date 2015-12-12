@@ -1,0 +1,15 @@
+$CONTENT_WIDTH: 1000px !default;
+
+//Buttons
+button{
+    outline: none;
+}
+.ui-button{
+    background-color: transparent;
+    border: none;
+}
+
+//Inputs
+input,textarea{
+    outline: none;
+}

@@ -1,0 +1,38 @@
+//Layouts
+.ui-container{
+    width: $CONTENT_WIDTH;
+    margin: {
+        right: auto;
+        left: auto;
+    }
+}
+.ui-row{
+    margin:{
+        right: -10px;
+        left: -10px;
+    }
+    overflow: hidden;
+}
+
+.ui-col-2,
+.ui-col-3,
+.ui-col-4,
+.ui-col-6,
+.ui-col-8,
+.ui-col-9,
+.ui-col-12{
+    box-sizing: border-box;
+    float: left;
+    padding: {
+        right: 10px;
+        left: 10px;
+    }
+}
+
+$_cols: 2,3,4,6,8,9,12;
+@each $_num in $_cols{
+    $width: (100/12 * $_num);
+    .ui-col-#{$_num} {
+        width: #{$width + '%'};
+    }
+}

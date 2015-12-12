@@ -1,0 +1,26 @@
+/*!
+ *  Embeded Fonts(SourceHanSans)
+ */
+
+ @font-face {
+    font-family: 'SYHT_GZ';
+    src: url('../fonts/webfont.eot'); /* IE9*/
+    src: url('../fonts/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/webfont.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/webfont.ttf') format('truetype'); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+ }
+
+ @font-face {
+   font-family: 'ICON_GZ';
+   src: url('//at.alicdn.com/t/font_1449909000_5646157.eot'); /* IE9*/
+   src: url('//at.alicdn.com/t/font_1449909000_5646157.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   url('//at.alicdn.com/t/font_1449909000_5646157.woff') format('woff'), /* chrome、firefox */
+   url('//at.alicdn.com/t/font_1449909000_5646157.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+   url('//at.alicdn.com/t/font_1449909000_5646157.svg#iconfont') format('svg'); /* iOS 4.1- */
+ }
+ .icon{
+    font-family: 'ICON_GZ';
+    font-style: normal;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+ }

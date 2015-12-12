@@ -1,0 +1,13 @@
+@import 'normalize';
+@import 'colors';
+@import 'fonts';
+@import 'base';
+//@import 'gazer-ui';
+@import 'functions';
+
+.center{
+    display: block;
+    width: $CONTENT_WIDTH;
+    margin-right: auto;
+    margin-left: auto;
+}

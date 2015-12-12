@@ -1,0 +1,395 @@
+@import './_modules/common';
+
+// Slider Addon Styles
+@import './_modules/owl.carousel/owl.carousel';
+@import './_modules/owl.carousel/owl.transitions';
+
+.page{
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+    max-height: 800px;
+}
+.page-caption{
+    margin-top: 70px;
+    text-align: center;
+    h2,h3{
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+    }
+    h2{
+        color: $COLOR_CAPTION;
+        font-size: 28px;
+    }
+    h3{
+        margin-top: 10px;
+        color: $COLOR_SUB_CAPTION;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+.decoration-line{
+    width: 80px;
+    height: 3px;
+    margin: 30px auto 40px auto;
+    background-color: $COLOR_YELLOW;
+}
+
+.header{
+    background-color: #333;
+    background-image: url(../images/header.png);
+    background-position: top center;
+    background-size: 1920px 800px;
+}
+.top-bar{
+    height: 100px;
+    padding: 0 30px;
+    .logo{
+        float: left;
+        height: 100px;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        font-size: 26px;
+        font-weight: 300;
+        line-height: 100px;
+        span{
+            color: $COLOR_YELLOW;
+            font-size: 26px;
+        }
+    }
+    .social-icons{
+        float: right;
+        a{
+            display: block;
+            float: left;
+            width: 28px;
+            height: 28px;
+            margin: 35px 6px 0;
+            color: #fff;
+            line-height: 28px;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid transparent;
+            border: 1px solid rgba(255,255,255,1);
+            border-radius: 50%;
+            @include transition;
+            &:hover{
+                color: $COLOR_YELLOW;
+                border-color: $COLOR_YELLOW;
+            }
+        }
+    }
+}
+.header-caption{
+    margin-top: 120px;
+    h2{
+        color: #fff;
+        font-size: 48px;
+    }
+    h3{
+        color: #fff;
+        font-size: 32px;
+        line-height: 32px;
+    }
+    a{
+        display: inline-block;
+        height: 32px;
+        margin: 30px 20px;
+        padding: 0 30px;
+        color: #fff;
+        font-size: 16px;
+        line-height: 36px;
+        text-decoration: none;
+        border-radius: 18px;
+        @include transition;
+        &:hover{
+            border-color: $COLOR_YELLOW;
+        }
+    }
+    .btn-view-service{
+        border: 1px solid #fff;
+        &:hover{
+            color: $COLOR_YELLOW;
+        }
+    }
+    .btn-live-contact{
+        border: 1px solid $COLOR_BLUE;
+        background-color: $COLOR_BLUE;
+        &:hover{
+            background-color: $COLOR_YELLOW;
+        }
+    }
+}
+.btn-skip-header{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    margin-left: -16px;
+    color: #fff;
+    line-height: 32px;
+    text-align: center;
+    text-decoration: none;
+}
+.service{
+    padding-top: 1px;
+    padding-bottom: 80px;
+}
+.service-caption{
+    text-align: center;
+}
+.reserve-service{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    .service-item{
+        float: left;
+        width: 254px;
+        height: 380px;
+        margin: 0 36px;
+        text-align: center;
+        border: 1px solid $COLOR_SUB_CAPTION + 30;
+        background-position: 67px 33px;
+        background-repeat: no-repeat;
+        background-size: 190px 197px;
+        @include transition;
+        &:hover{
+            border-color: $COLOR_YELLOW;
+        }
+    }
+    .service-cards{
+        background-image: url(../images/icon-cards.png);
+    }
+    .service-foldings{
+        background-image: url(../images/icon-foldings.png);
+    }
+    .service-others{
+        background-image: url(../images/icon-others.png);
+    }
+    .service-subtitle{
+        display: block;
+        width: auto;
+        height: 1px;
+        margin: 200px 50px 0 50px;
+        padding: 0 10px;
+        color: $COLOR_SUB_CAPTION + 40;
+        letter-spacing: 1px;
+        line-height: 2px;
+        font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', Arial;
+        font-size: 12px;
+        font-weight: normal;
+        text-transform: uppercase;
+        border-right: 30px solid $COLOR_SUB_CAPTION + 40;
+        border-left: 30px solid $COLOR_SUB_CAPTION + 40;
+    }
+    .service-title{
+        color: $COLOR_CAPTION;
+        font-size: 20px;
+        margin-top: 25px;
+    }
+    .service-price{
+        color: $COLOR_CAPTION;
+        margin-top: 8px;
+        font-size: 12px;
+    }
+    .service-btn-reserve{
+        display: block;
+        width: 180px;
+        height: 32px;
+        margin: 30px auto 0 auto;
+        color: #fff;
+        font-size: 14px;
+        line-height: 34px;
+        text-align: center;
+        text-decoration: none;
+        background-color: $COLOR_YELLOW;
+        @include transition;
+        &:hover{
+            background-color: $COLOR_YELLOW - 20;
+        }
+    }
+}
+.service-more{
+    text-align: center;
+    margin-top: 40px;
+    h5{
+        margin: 0;
+        padding: 0;
+        color: $COLOR_CAPTION;
+        font-weight: normal;
+    }
+    a,span{
+        display: inline-block;
+        height: 32px;
+    }
+    a{
+        display: inline-block;
+        height: 32px;
+        margin: 30px 15px 0 15px;
+        padding: 0 30px;
+        font-size: 16px;
+        line-height: 36px;
+        text-decoration: none;
+        border-radius: 18px;
+        @include transition;
+        &:hover{
+            border-color: $COLOR_YELLOW;
+        }
+    }
+    .btn-view-service{
+        color: $COLOR_CAPTION + 30;
+        border: 1px solid $COLOR_CAPTION + 30;
+        &:hover{
+            color: $COLOR_YELLOW;
+        }
+    }
+    .btn-live-contact{
+        color: #fff;
+        border: 1px solid $COLOR_BLUE;
+        background-color: $COLOR_BLUE;
+        &:hover{
+            background-color: $COLOR_YELLOW;
+        }
+    }
+}
+
+.works{
+    padding: 1px 0 80px 0;
+    background-color: #f7f7f7;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.works-slider{
+    .owl-controls{
+        width: 100%;
+        height: 20px;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .owl-page{
+    	display: inline-block;
+    	width: 12px;
+    	height: 12px;
+    	margin: 4px 5px;
+    	background-color: #ccc;
+    	border-radius: 7px;
+        @include transition;
+        &.active{
+            background-color: $COLOR_YELLOW;
+        }
+    }
+}
+.works-slide-items{
+    overflow: hidden;
+    .item{
+        float: left;
+        width: 246px;
+        height: 246px;
+        img{
+            display: block;
+            width: 226px;
+            height: 226px;
+            margin: 10px;
+            background-color: #eee;
+            border: none;
+            border-radius: 5px;
+            opacity: .3;
+        }
+    }
+}
+.about{
+    padding: 1px 0 60px 0;
+    .members{
+        margin-top: 40px;
+        overflow: hidden;
+        text-align: center;
+        .member{
+            display: inline-block;
+            width: 100px;
+            margin: 0 20px;
+            .avatar{
+                display: block;
+                width: 100px;
+                height: 100px;
+                background-color: #eee;
+                border-radius: 50px;
+                opacity: .3;
+            }
+            .name{
+                margin: 20px 0 0 0;
+                color: $COLOR_CAPTION;
+                font-size: 16px;
+                small{
+                    display: block;
+                    margin-top: 10px;
+                    color: $COLOR_SUB_CAPTION;
+                    font-size: 12px;
+                }
+            }
+        }
+        .tip-text{
+            width: 200px;
+            height: 32px;
+            margin: 30px auto;
+            padding-top: 20px;
+            color: $COLOR_SUB_CAPTION;
+            line-height: 32px;
+            font-size: 18px;
+            font-weight: normal;
+            text-align: center;
+            border-top: 1px solid $COLOR_SUB_CAPTION + 30;
+        }
+    }
+}
+.contact{
+    padding: 60px 0;
+    background-color: $COLOR_YELLOW;
+    background-image: url(../images/world-map.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 800px 400px;
+    border-top: 1px solid $COLOR_YELLOW - 30;
+    .contact-box{
+        overflow: hidden;
+        color: #fff;
+    }
+    .contact-caption{
+        margin-bottom: 20px;
+        font-size: 32px;
+        text-align: center;
+        .icon{
+            font-size: 30px;
+        }
+    }
+    .contact-tel{
+        text-align: center;
+        span{
+            font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', Arial;
+            font-size: 32px;
+            font-weight: 500;
+        }
+    }
+}
+.footer{
+    height: 80px;
+    background-color: #333;
+    .copyright{
+        color: #ddd;
+        font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', Arial;
+        font-size: 12px;
+        line-height: 80px;
+        text-align: center;
+        text-transform: uppercase;
+        a{
+            color: $COLOR_YELLOW;
+            text-decoration: none;
+            &:hover{
+                color: $COLOR_BLUE;
+            }
+        }
+    }
+}
