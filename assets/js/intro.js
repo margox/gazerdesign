@@ -8,6 +8,7 @@
         _page    = _src.match(/(\?|^|&)page=(.*)($|&)/);
 
     if (_page && _page[2]) {
+        alert(encodeURIComponent(_page[2]));
         require(['apps/' + encodeURIComponent(_page[2])]);
     }
 

@@ -1,9 +1,5 @@
-define(function(require, exports, module) {
+require(['jquery','owlCarousel','imgloaded'],function() {
     'use strict';
-
-    require('jquery');
-    require('owlCarousel');
-    require('imgloaded');
 
     // Init Works Slider
     $('#jWorks').owlCarousel({
