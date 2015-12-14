@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: './assets/js/libs/',
+    baseUrl: 'http://static.gazer.design/js/libs/',
     shim: {
         'owlCarousel': ['jquery']
     },
