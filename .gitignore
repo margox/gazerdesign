@@ -57,8 +57,8 @@ npm-debug.log
 #.*-cache
 .project
 .build_*
-css/
-assets/css/
+#css/
+#assets/css/
 html/api/upload/*.*
 docs/
 release/
