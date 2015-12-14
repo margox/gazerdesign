@@ -44,7 +44,7 @@ nb-configuration.xml
 *.swp
 *.tmp
 *.save
-#.sass*
+.sass*
 
 .netrwhist
 .session.vim
@@ -54,11 +54,12 @@ node_modules/*
 logs/*
 npm-debug.log
 
-#.*-cache
+.*-cache
 .project
+.build.js
 .build_*
-#css/
-#assets/css/
+css/
+assets/css/
 html/api/upload/*.*
 docs/
 release/
