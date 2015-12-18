@@ -2,15 +2,17 @@
 $CONTENT_WIDTH: 984px;
 
 html,body{
-    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'SYHT_GZ','宋体';
-    background-color: #fff;
+    background-color: #ccc;
     background-size: cover;
 }
 body{
+    max-width: 1902px;
+    margin: 0 auto;
     overflow: auto;
+    background-color: #fff;
 }
 
 ::-webkit-input-placeholder{
