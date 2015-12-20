@@ -288,11 +288,11 @@
     }
     .owl-page{
     	display: inline-block;
-    	width: 12px;
-    	height: 12px;
-    	margin: 4px 5px;
+    	width: 10px;
+    	height: 10px;
+    	margin: 5px 5px;
     	background-color: #ccc;
-    	border-radius: 7px;
+    	border-radius: 5px;
         @include transition;
         &.active{
             background-color: $COLOR_YELLOW;
@@ -327,6 +327,8 @@
             display: inline-block;
             width: 100px;
             margin: 0 20px;
+            text-decoration: none;
+            cursor: default;
             .avatar{
                 display: block;
                 width: 100px;
@@ -334,11 +336,21 @@
                 background-color: #eee;
                 border-radius: 50px;
                 opacity: .3;
+                cursor: pointer;
+                @include transition;
+                &:hover{
+                    @include transform(rotate(180deg));
+                }
             }
             .name{
                 margin: 20px 0 0 0;
                 color: $COLOR_CAPTION;
                 font-size: 16px;
+                cursor: pointer;
+                @include transition;
+                &:hover{
+                    color: $COLOR_YELLOW;
+                }
                 small{
                     display: block;
                     margin-top: 10px;
@@ -362,7 +374,7 @@
     }
 }
 .contact{
-    padding: 60px 0;
+    padding: 100px 0;
     background-color: $COLOR_YELLOW;
     background-image: url(../images/world-map.png);
     background-position: center top;
