@@ -6,6 +6,8 @@
 
 .page{
     position: relative;
+    z-index: 5;
+    background-color: #fff;
 }
 .page-caption{
     margin-top: 70px;
@@ -30,33 +32,102 @@
     width: 80px;
     height: 3px;
     margin: 30px auto 40px auto;
-    background-color: $COLOR_YELLOW;
+    background-color: $COLOR_RED;
 }
 
 .header{
-    height: 600px;
-    background-color: #333;
-    background-image: url(../images/header.png);
-    background-position: top center;
-    background-size: 1920px 800px;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 500px;
+    background-image: url(../images/banner.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 1920px 600px;
 }
 .top-bar{
-    position: relative;
-    z-index: 2;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
     height: 100px;
     padding: 0 30px;
+    background-image: url(../images/banner.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 1920px 600px;
+    &.fixed{
+        border-bottom: 1px solid rgba(0,0,0,.1);
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        .background-layer{
+            background-color: rgba($COLOR_RED, 1);
+        }
+    }
+    .background-layer{
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 101px;
+        background-color: rgba($COLOR_RED, .95);
+        transition: background .5s;
+    }
     .logo{
+        position: relative;
+        z-index: 1;
         float: left;
         height: 100px;
         margin: 0;
         padding: 0;
         color: #fff;
-        font-size: 26px;
-        font-weight: 300;
+        font-size: 24px;
+        font-weight: 500;
         line-height: 100px;
         span{
-            color: $COLOR_YELLOW;
-            font-size: 26px;
+            display: inline-block;
+            height: 40px;
+            margin: 28px 10px 0 0;
+            padding: 0 10px;
+            color: $COLOR_RED;
+            // font-size: 26px;
+            font-weight: 700;
+            line-height: 44px;
+            background-color: #fff;
+            box-shadow: 1px 1px 3px rgba(0,0,0,.1);
+        }
+    }
+    .primary-menu{
+        position: absolute;
+        z-index: 1;
+        right: 100px;
+        left: 100px;
+        height: 100px;
+        margin: 0 200px;
+        padding: 0;
+        list-style-type: none;
+        overflow: hidden;
+        text-align: center;
+        li{
+            display: inline-block;
+            a{
+                display: block;
+                height: 40px;
+                margin: 30px 20px;
+                padding: 0 15px;
+                color: #fff;
+                font-size: 18px;
+                line-height: 40px;
+                text-decoration: none;
+                border-bottom: 2px solid transparent;
+                // @include transition;
+                &.active{
+                    border-color: #fff;
+                }
+            }
         }
     }
     .social-icons{
@@ -74,10 +145,9 @@
             border: 1px solid transparent;
             border: 1px solid rgba(255,255,255,1);
             border-radius: 50%;
-            @include transition;
             &:hover{
-                color: $COLOR_YELLOW;
-                border-color: $COLOR_YELLOW;
+                color: $COLOR_RED;
+                border-color: $COLOR_RED;
             }
         }
     }
@@ -85,75 +155,55 @@
 .header-caption{
     position: relative;
     z-index: 2;
-    margin-top: 120px;
+    margin-top: 180px;
     h2{
         color: #fff;
         font-size: 48px;
     }
     h3{
+        margin-top: 20px;
         color: #fff;
-        font-size: 32px;
-        line-height: 32px;
+        font-size: 28px;
+        line-height: 28px;
     }
     a{
         display: inline-block;
-        height: 32px;
-        margin: 30px 20px;
-        padding: 0 30px;
+        height: 36px;
+        margin-top: 50px;
+        padding: 0 60px;
         color: #fff;
         font-size: 16px;
-        line-height: 36px;
+        line-height: 40px;
         text-decoration: none;
-        border-radius: 18px;
-        @include transition;
-        &:hover{
-            border-color: $COLOR_YELLOW;
-        }
-    }
-    .btn-view-service{
-        border: 1px solid #fff;
-        &:hover{
-            color: $COLOR_YELLOW;
-        }
+        // border-radius: 4px;
+        // @include transition;
     }
     .btn-live-contact{
-        border: 1px solid $COLOR_BLUE;
-        background-color: $COLOR_BLUE;
+        color: #fff;
+        border: 1px solid #fff;
         &:hover{
-            background-color: $COLOR_YELLOW;
+            color: $COLOR_RED;
+            background-color: #fff;
+            border-color: #fff;
         }
     }
 }
-.btn-skip-header{
-    display: block;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    width: 32px;
-    height: 32px;
-    margin-left: -16px;
-    color: #fff;
-    line-height: 32px;
-    text-align: center;
-    text-decoration: none;
-}
-.header-background-mask{
+.header-background-image{
     position: absolute;
     z-index: 0;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/grid.png);
-    background-size: 5px 5px;
-    @media (-webkit-min-device-pixel-ratio: 2){
-        background-image: url(../images/grid@2x.png);
-    }
+    //@include gradient(#FFB88C, #DE6262);
+    background-color: rgba($COLOR_RED, .95);
 }
 
 .service{
+    margin-top: 500px;
     padding-top: 1px;
     padding-bottom: 80px;
+    box-shadow: 0 -3px 3px rgba(0,0,0,.05);
 }
 .service-caption{
     text-align: center;
@@ -165,34 +215,29 @@
     .service-item{
         float: left;
         width: 254px;
-        height: 380px;
+        height: 300px;
         margin: 0 36px;
         text-align: center;
-        border: 1px solid $COLOR_SUB_CAPTION + 30;
-        background-position: 67px 33px;
+        background-position: center top;
         background-repeat: no-repeat;
-        background-size: 190px 197px;
-        @include transition;
-        &:hover{
-            border-color: $COLOR_YELLOW;
-        }
+        background-size: 125px 110px;
     }
     .service-cards{
-        background-image: url(../images/icon-cards.png);
+        background-image: url(../images/cards_gray.png);
     }
     .service-foldings{
-        background-image: url(../images/icon-foldings.png);
+        background-image: url(../images/foldings_gray.png);
     }
     .service-others{
-        background-image: url(../images/icon-others.png);
+        background-image: url(../images/bag_gray.png);
     }
     .service-subtitle{
         display: block;
         width: auto;
         height: 1px;
-        margin: 200px 50px 0 50px;
+        margin: 130px 50px 0 50px;
         padding: 0 10px;
-        color: $COLOR_SUB_CAPTION + 40;
+        color: $COLOR_SUB_CAPTION + 30;
         letter-spacing: 1px;
         line-height: 2px;
         font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', Arial;
@@ -215,28 +260,41 @@
     .service-btn-reserve{
         display: block;
         width: 180px;
-        height: 32px;
+        height: 36px;
         margin: 30px auto 0 auto;
         color: #fff;
         font-size: 14px;
-        line-height: 34px;
+        line-height: 38px;
         text-align: center;
         text-decoration: none;
-        background-color: $COLOR_YELLOW;
-        @include transition;
+        background-color: $COLOR_RED;
+        border: 1px solid $COLOR_RED - 20;
+        // border-radius: 4px;
+        // @include transition;
         &:hover{
-            background-color: $COLOR_YELLOW - 20;
+            background-color: $COLOR_RED - 20;
         }
     }
 }
 .service-more{
     text-align: center;
-    margin-top: 40px;
+    margin-top: 10px;
     h5{
-        margin: 0;
+        width: 280px;
+        height: 19px;
+        margin: 0 auto;
         padding: 0;
         color: $COLOR_CAPTION;
         font-weight: normal;
+        border-bottom: 1px solid #ECEDEE;
+        span{
+            display: block;
+            width: 140px;
+            margin: 0 auto;
+            height: 40px;
+            line-height: 40px;
+            background-color: #fff;
+        }
     }
     a,span{
         display: inline-block;
@@ -245,39 +303,40 @@
     a{
         display: inline-block;
         height: 32px;
-        margin: 30px 15px 0 15px;
+        margin: 60px 15px 0 15px;
         padding: 0 30px;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 36px;
         text-decoration: none;
-        border-radius: 18px;
-        @include transition;
+        // border-radius: 4px;
+        // @include transition;
         &:hover{
-            border-color: $COLOR_YELLOW;
+            border-color: $COLOR_RED;
         }
     }
     .btn-view-service{
         color: $COLOR_CAPTION + 30;
         border: 1px solid $COLOR_CAPTION + 30;
         &:hover{
-            color: $COLOR_YELLOW;
+            color: $COLOR_RED;
         }
     }
     .btn-live-contact{
         color: #fff;
-        border: 1px solid $COLOR_BLUE;
+        border: 1px solid $COLOR_BLUE - 20;
         background-color: $COLOR_BLUE;
         &:hover{
-            background-color: $COLOR_YELLOW;
+            border: 1px solid $COLOR_BLUE - 40;
+            background-color: $COLOR_BLUE - 20;
         }
     }
 }
 
 .works{
     padding: 1px 0 80px 0;
-    background-color: #f7f7f7;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+    background-color: #f9fafb;
+    border-top: 1px solid #ECEDEE;
+    border-bottom: 1px solid #ECEDEE;
 }
 .works-slider{
     .owl-controls{
@@ -295,7 +354,7 @@
     	border-radius: 5px;
         @include transition;
         &.active{
-            background-color: $COLOR_YELLOW;
+            background-color: $COLOR_RED;
         }
     }
 }
@@ -312,51 +371,34 @@
             margin: 10px;
             background-color: #eee;
             border: none;
-            border-radius: 5px;
+            // border-radius: 2px;
             opacity: .3;
         }
     }
 }
 .about{
-    padding: 1px 0 60px 0;
+    padding: 1px 0 80px 0;
     .members{
-        margin-top: 40px;
+        margin-top: 80px;
         overflow: hidden;
         text-align: center;
-        .member{
+        .avatar{
             display: inline-block;
-            width: 100px;
-            margin: 0 20px;
+            width: 160px;
+            height: 160px;
+            margin: 0 30px;
             text-decoration: none;
-            cursor: default;
-            .avatar{
+            border-radius: 50%;
+            border: 3px dotted #ECEDEE;
+            cursor: pointer;
+            img{
                 display: block;
-                width: 100px;
-                height: 100px;
-                background-color: #eee;
+                width: 160px;
+                height: 160px;
                 border-radius: 50px;
-                opacity: .3;
-                cursor: pointer;
-                @include transition;
-                &:hover{
-                    @include transform(rotate(180deg));
-                }
-            }
-            .name{
-                margin: 20px 0 0 0;
-                color: $COLOR_CAPTION;
-                font-size: 16px;
-                cursor: pointer;
-                @include transition;
-                &:hover{
-                    color: $COLOR_YELLOW;
-                }
-                small{
-                    display: block;
-                    margin-top: 10px;
-                    color: $COLOR_SUB_CAPTION;
-                    font-size: 12px;
-                }
+            }    
+            &:hover img{
+                @include transform(rotateY(180deg));
             }
         }
         .tip-text{
@@ -372,39 +414,72 @@
             border-top: 1px solid $COLOR_SUB_CAPTION + 30;
         }
     }
+    .quotes{
+        position: relative;
+        width: 700px;
+        height: 80px;
+        margin: 60px auto 0 auto;
+        // background-color: #f9fafb;
+        border: 1px solid #ECEDEE;
+        // border-radius: 5px;
+        .indicator{
+            position: absolute;
+            top: -17px;
+            border: 8px solid #fff;
+            border-bottom-color: #f3f4f5;
+            @include transition(.5s);
+            @include transfunny;
+        }
+        &[data-user='1']{
+            .indicator{
+                left: 120px;
+            }
+            .item-1{
+                opacity: 1;
+                @include transform(translateY(0));
+            }
+        }
+        &[data-user='2']{
+            .indicator{
+                left: 340px;
+            }
+            .item-2{
+                opacity: 1;
+                @include transform(translateY(0));
+            }
+        } 
+        &[data-user='3']{
+            .indicator{
+                left: 565px;
+            }
+            .item-3{
+                opacity: 1;
+                @include transform(translateY(0));
+            }
+        }
+        .item{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            bottom: 20px;
+            left: 20px;
+            overflow: hidden;
+            color: $COLOR_SUB_CAPTION;
+            opacity: 0;
+            @include transition(.5s);
+            @include transfunny;
+            @include transform(translateY(20px));
+        }
+    }
 }
 .contact{
-    padding: 100px 0;
-    background-color: $COLOR_YELLOW;
-    background-image: url(../images/world-map.png);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: 800px 400px;
-    border-top: 1px solid $COLOR_YELLOW - 30;
-    .contact-box{
-        overflow: hidden;
-        color: #fff;
-    }
-    .contact-caption{
-        margin-bottom: 20px;
-        font-size: 32px;
-        text-align: center;
-        .icon{
-            font-size: 30px;
-        }
-    }
-    .contact-tel{
-        text-align: center;
-        span{
-            font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', Arial;
-            font-size: 32px;
-            font-weight: 500;
-        }
-    }
+    padding: 1px 0 80px 0;
+    background-color: #f9fafb;
+    border-top: 1px solid #ECEDEE;
 }
 .footer{
     height: 80px;
-    background-color: #333;
+    background-color: #061524;
     .copyright{
         color: #ddd;
         font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', Arial;
