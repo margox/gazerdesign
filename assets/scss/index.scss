@@ -45,7 +45,6 @@
     height: 500px;
     background-image: url(../images/banner.jpg);
     background-position: center top;
-    background-repeat: no-repeat;
     background-size: 1920px 600px;
 }
 .top-bar{
@@ -55,16 +54,15 @@
     right: 0;
     left: 0;
     height: 100px;
+    margin: 0 auto;
     padding: 0 30px;
     background-image: url(../images/banner.jpg);
     background-position: center top;
-    background-repeat: no-repeat;
     background-size: 1920px 600px;
     &.fixed{
-        border-bottom: 1px solid rgba(0,0,0,.1);
-        box-shadow: 0 1px 2px rgba(0,0,0,.05);
-        .logo span{
-            background-color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.3);
+        .logo{
+            background-position: bottom left;
         }
         .background-layer{
             height: 101px;
@@ -85,23 +83,18 @@
         position: relative;
         z-index: 2;
         float: left;
-        height: 100px;
-        margin: 0;
-        padding: 0;
+        height: 32px;
+        margin: 34px 0 0 0;
+        padding: 0 0 0 39px;
         color: #fff;
         font-size: 24px;
         font-weight: 500;
-        line-height: 100px;
-        span{
-            display: inline-block;
-            height: 40px;
-            margin: 28px 10px 0 0;
-            padding: 0 10px;
-            color: $COLOR_RED;
-            font-weight: 700;
-            line-height: 44px;
-            transition: background .3s;
-        }
+        line-height: 36px;
+        background-image: url(../images/logo.png);
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: 32px 64px;
+        transition: background .3s;
     }
     .primary-menu{
         position: absolute;
@@ -274,8 +267,6 @@
         text-decoration: none;
         background-color: $COLOR_RED;
         border: 1px solid $COLOR_RED - 20;
-        // border-radius: 4px;
-        // @include transition;
         &:hover{
             background-color: $COLOR_RED - 20;
         }
@@ -367,15 +358,33 @@
         float: left;
         width: 246px;
         height: 246px;
-        img{
+        a{
+            position: relative;
             display: block;
             width: 226px;
             height: 226px;
             margin: 10px;
-            background-color: #eee;
-            border: none;
-            // border-radius: 2px;
-            opacity: .3;
+            overflow: hidden;
+            text-decoration: none;
+            img{
+                display: block;
+                width: 226px;
+                height: 226px;
+                background-color: #eee;
+                border: none;
+                opacity: .3;
+            }
+            span{
+                display: block;
+                position: absolute;
+                z-index: 1;
+                top: -226px;
+                left: 0;
+                width: 226px;
+                height: 226px;
+                background-color: $COLOR_RED;
+                opacity: .5;
+            }
         }
     }
 }
@@ -427,7 +436,7 @@
             position: absolute;
             top: -17px;
             border: 8px solid #fff;
-            border-bottom-color: #f3f4f5;
+            border-bottom-color: #ECEDEE;
             @include transition(.5s);
             @include transfunny;
         }
@@ -474,12 +483,8 @@
     }
 }
 .contact{
+    position: relative;
     background-color: $COLOR_DARK + 10;
-    .page-caption{
-        h2,h5{
-            // color: #fff;
-        }
-    }
     .subscribe-box{
         height: 60px;
         padding: 50px 0;
@@ -518,6 +523,8 @@
         }
     }
     .contact-box{
+        position: relative;
+        z-index: 2;
         width: 800px;
         margin: 0 auto;
         padding: 100px 0 50px 0;
@@ -557,6 +564,20 @@
                 }
             }
         }
+    }
+    &:before{
+        display: block;
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/banner.jpg);
+        background-size: cover;
+        opacity: .01;
+        will-change: transform;
     }
 }
 .footer{

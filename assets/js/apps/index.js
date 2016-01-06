@@ -63,11 +63,10 @@ require(['jquery','owlCarousel','imgloaded'],function() {
                 hightLightNavItem(-1);
             }
 
-        }).on('load', function() {
-
+        });
+        $(function() {
             var scrollTop = $(this).scrollTop();
             adjustNavBar(scrollTop);
-
         });
 
         function hightLightNavItem(index) {
@@ -89,7 +88,7 @@ require(['jquery','owlCarousel','imgloaded'],function() {
                 }, 300);
             }
 
-        } 
+        }
 
         function adjustNavBar(scrollTop) {
 
@@ -120,12 +119,52 @@ require(['jquery','owlCarousel','imgloaded'],function() {
 
     })();
 
-    // 团队成员气泡切换效果
-    var _quotePops = $('#jQuotePops');
-    var _avatars = $('#jAvatars');
+    // 案例图片特效
+    var workItems = $('#jWorksSlider').find('.item a');
+    var workItemsMaskPos = [
+        [0, -226],
+        [226, 0],
+        [0, 226],
+        [-226, 0]
+    ];
 
-    _avatars.on('click', 'a', function() {
-        _quotePops.attr('data-user', $(this).attr('data-user') || 1);
+    workItems.on('mouseenter', function(e) {
+        var direction = getMouseDirection(this, e);
+        var mask = $(this).find('.mask');
+        mask.css({
+            left: workItemsMaskPos[direction][0],
+            top: workItemsMaskPos[direction][1]
+        }).stop().animate({
+            left: 0,
+            top: 0
+        }, 200);
+    }).on('mouseleave', function(e) {
+        var direction = getMouseDirection(this, e);
+        var mask = $(this).find('.mask');
+        mask.stop().animate({
+            left: workItemsMaskPos[direction][0],
+            top: workItemsMaskPos[direction][1]
+        }, 200);
+    });
+
+    function getMouseDirection(obj, e) {
+
+        var $obj = $(obj),
+            w = $obj.width(),
+            h = $obj.height(),
+            x = (e.pageX - $obj.offset().left - (w / 2)) * (w > h ? (h / w) : 1),
+            y = (e.pageY - $obj.offset().top - (h / 2)) * (h > w ? (w / h) : 1);
+
+        return  Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; 
+
+    }
+
+    // 团队成员气泡切换效果
+    var quotePops = $('#jQuotePops');
+    var avatars = $('#jAvatars');
+
+    avatars.on('click', 'a', function() {
+        quotePops.attr('data-user', $(this).attr('data-user') || 1);
         return false;
     });
 
