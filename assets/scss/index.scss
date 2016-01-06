@@ -20,12 +20,14 @@
     h2{
         color: $COLOR_CAPTION;
         font-size: 28px;
+        font-weight: 500;
     }
     h3{
         margin-top: 10px;
         color: $COLOR_SUB_CAPTION;
         font-size: 16px;
         line-height: 24px;
+        font-weight: normal;
     }
 }
 .decoration-line{
@@ -34,7 +36,6 @@
     margin: 30px auto 40px auto;
     background-color: $COLOR_RED;
 }
-
 .header{
     position: fixed;
     z-index: 4;
@@ -62,7 +63,11 @@
     &.fixed{
         border-bottom: 1px solid rgba(0,0,0,.1);
         box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        .logo span{
+            background-color: #fff;
+        }
         .background-layer{
+            height: 101px;
             background-color: rgba($COLOR_RED, 1);
         }
     }
@@ -72,13 +77,13 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 101px;
-        background-color: rgba($COLOR_RED, .95);
-        transition: background .5s;
+        height: 100px;
+        background-color: rgba(#000, .8);
+        transition: background .3s;
     }
     .logo{
         position: relative;
-        z-index: 1;
+        z-index: 2;
         float: left;
         height: 100px;
         margin: 0;
@@ -93,16 +98,14 @@
             margin: 28px 10px 0 0;
             padding: 0 10px;
             color: $COLOR_RED;
-            // font-size: 26px;
             font-weight: 700;
             line-height: 44px;
-            background-color: #fff;
-            box-shadow: 1px 1px 3px rgba(0,0,0,.1);
+            transition: background .3s;
         }
     }
     .primary-menu{
         position: absolute;
-        z-index: 1;
+        z-index: 2;
         right: 100px;
         left: 100px;
         height: 100px;
@@ -122,15 +125,20 @@
                 font-size: 18px;
                 line-height: 40px;
                 text-decoration: none;
-                border-bottom: 2px solid transparent;
-                // @include transition;
-                &.active{
-                    border-color: #fff;
-                }
             }
         }
     }
+    .menu-indicator{
+        position: absolute;
+        z-index: 1;
+        height: 101px;
+        width: 100px;
+        background-color: rgba(#fff, .2);
+        opacity: 0;
+    }
     .social-icons{
+        position: relative;
+        z-index: 2;
         float: right;
         a{
             display: block;
@@ -147,7 +155,7 @@
             border-radius: 50%;
             &:hover{
                 color: $COLOR_RED;
-                border-color: $COLOR_RED;
+                background-color: #fff;
             }
         }
     }
@@ -175,16 +183,13 @@
         font-size: 16px;
         line-height: 40px;
         text-decoration: none;
-        // border-radius: 4px;
-        // @include transition;
     }
     .btn-live-contact{
-        color: #fff;
-        border: 1px solid #fff;
+        color: $COLOR_RED;
+        border: 1px solid $COLOR_RED;
         &:hover{
-            color: $COLOR_RED;
-            background-color: #fff;
-            border-color: #fff;
+            color: #fff;
+            background-color: $COLOR_RED;
         }
     }
 }
@@ -195,8 +200,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    //@include gradient(#FFB88C, #DE6262);
-    background-color: rgba($COLOR_RED, .95);
+    background-color: rgba(#000, .8);
 }
 
 .service{
@@ -251,6 +255,7 @@
         color: $COLOR_CAPTION;
         font-size: 20px;
         margin-top: 25px;
+        font-weight: normal;
     }
     .service-price{
         color: $COLOR_CAPTION;
@@ -308,8 +313,6 @@
         font-size: 14px;
         line-height: 36px;
         text-decoration: none;
-        // border-radius: 4px;
-        // @include transition;
         &:hover{
             border-color: $COLOR_RED;
         }
@@ -378,6 +381,7 @@
 }
 .about{
     padding: 1px 0 80px 0;
+    border-bottom: 1px solid #ECEDEE;
     .members{
         margin-top: 80px;
         overflow: hidden;
@@ -389,7 +393,6 @@
             margin: 0 30px;
             text-decoration: none;
             border-radius: 50%;
-            border: 3px dotted #ECEDEE;
             cursor: pointer;
             img{
                 display: block;
@@ -419,9 +422,7 @@
         width: 700px;
         height: 80px;
         margin: 60px auto 0 auto;
-        // background-color: #f9fafb;
         border: 1px solid #ECEDEE;
-        // border-radius: 5px;
         .indicator{
             position: absolute;
             top: -17px;
@@ -473,25 +474,136 @@
     }
 }
 .contact{
-    padding: 1px 0 80px 0;
-    background-color: #f9fafb;
-    border-top: 1px solid #ECEDEE;
+    background-color: $COLOR_DARK + 10;
+    .page-caption{
+        h2,h5{
+            // color: #fff;
+        }
+    }
+    .subscribe-box{
+        height: 60px;
+        padding: 50px 0;
+        background-color: #f9fafb;
+    }
+    .subscribe-form{
+        width: 800px;
+        height: 60px;
+        margin: 0 auto;
+        input{
+            display: block;
+            float: left;
+            width: 540px;
+            height: 58px;
+            padding: 0 20px;
+            font-size: 18px;
+            border: 1px solid #fff;
+            background-color: #fff;
+            outline: none;
+            &:focus{
+                border-color: $COLOR_BLUE;
+            }
+        }
+        button{
+            display: block;
+            float: right;
+            width: 200px;
+            height: 58px;
+            color: #fff;
+            font-size: 18px;
+            background-color: $COLOR_BLUE;
+            border: none;
+            &:hover{
+                background-color: $COLOR_BLUE - 10;
+            }
+        }
+    }
+    .contact-box{
+        width: 800px;
+        margin: 0 auto;
+        padding: 100px 0 50px 0;
+        overflow: hidden;
+        background-image: url(../images/phone.png);
+        background-position: 500px 100px;
+        background-repeat: no-repeat;
+        background-size: auto 623px;
+        .left{
+            float: left;
+            width: 50%;
+            padding-top: 80px;
+            .item{
+                margin-bottom: 15px;
+                padding-top: 15px;
+                font-size: 14px;
+                line-height: 24px;
+                border-top: 1px solid $COLOR_DARK + 30;
+            }
+            .first-item{
+                padding: 0;
+                border: none;
+            }
+            .caption{
+                margin-bottom: 5px;
+                color: #fff;
+                font-weight: 700;
+            }
+            .content{
+                color: #bcbcbc;
+            }
+            a{
+                color: #bcbcbc;
+                text-decoration: none;
+                &:hover{
+                    color: $COLOR_BLUE;
+                }
+            }
+        }
+    }
 }
 .footer{
-    height: 80px;
-    background-color: #061524;
+    padding: 50px 0 40px 0;
+    background-color: $COLOR_DARK - 10;
     .copyright{
+        height: 20px;
         color: #ddd;
         font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', Arial;
         font-size: 13px;
-        line-height: 80px;
+        line-height: 20px;
         text-align: center;
         text-transform: uppercase;
         a{
-            color: $COLOR_YELLOW;
+            color: $COLOR_BLUE;
             text-decoration: none;
             &:hover{
-                color: $COLOR_BLUE;
+                color: $COLOR_RED;
+            }
+        }
+    }
+    .footer-menu{
+        height: 20px;
+        list-style: none;
+        margin: 0 0 15px 0;
+        padding: 0;
+        text-align: center;
+        line-height: 20px;
+        li{
+            display: inline-block;
+            margin-right: 10px;
+            padding: 0;
+            &:after{
+                content: "•";
+                padding-left: 10px;
+                color: #ddd;
+            }
+            &.last-item:after{
+                content: none;
+            }
+            a{
+                color: #ddd;
+                font-size: 14px;
+                text-decoration: none;
+                &:hover{
+                    color: $COLOR_BLUE;
+                }
             }
         }
     }
