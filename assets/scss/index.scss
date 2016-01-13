@@ -502,7 +502,7 @@
 }
 .contact{
     position: relative;
-    background-color: $COLOR_DARK + 10;
+    background-color: $COLOR_GRAY + 10;
     .subscribe-box{
         position: relative;
         z-index: 2;
@@ -602,7 +602,7 @@
 }
 .footer{
     padding: 50px 0 40px 0;
-    background-color: $COLOR_DARK - 10;
+    background-color: $COLOR_GRAY - 10;
     .copyright{
         height: 20px;
         color: #ddd;

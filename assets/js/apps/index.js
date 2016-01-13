@@ -68,6 +68,7 @@ define(function(require) {
             }
 
         });
+
         $(function() {
             var scrollTop = $(this).scrollTop();
             adjustNavBar(scrollTop);
@@ -150,7 +151,7 @@ define(function(require) {
             top: workItemsMaskPos[direction][1]
         }, 200);
     }).each(function() {
-        this.style.backgroundColor = 'rgba(0,0,0,.1)';//Utils.getRandomColor()
+        this.style.backgroundColor = Utils.getRandomColor();
     });
 
     // 团队成员气泡切换效果
