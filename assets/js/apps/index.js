@@ -1,8 +1,12 @@
-require(['jquery','owlCarousel','imgloaded'],function() {
+define(function(require) {
     'use strict';
 
+    var Utils = require('utils');
+    require('jquery');
+    require('owlCarousel');
+
     var wrap = $('html,body');
-    
+
     // 初始化案例轮播
     $('#jWorksSlider').owlCarousel({
         singleItem: true,
@@ -92,7 +96,7 @@ require(['jquery','owlCarousel','imgloaded'],function() {
 
         function adjustNavBar(scrollTop) {
 
-            if (scrollTop > 395) {
+            if (scrollTop > 545) {
                 navbar.addClass('fixed');
             } else {
                 navbar.removeClass('fixed');
@@ -129,7 +133,7 @@ require(['jquery','owlCarousel','imgloaded'],function() {
     ];
 
     workItems.on('mouseenter', function(e) {
-        var direction = getMouseDirection(this, e);
+        var direction = Utils.getMouseDirection(this, e);
         var mask = $(this).find('.mask');
         mask.css({
             left: workItemsMaskPos[direction][0],
@@ -139,25 +143,15 @@ require(['jquery','owlCarousel','imgloaded'],function() {
             top: 0
         }, 200);
     }).on('mouseleave', function(e) {
-        var direction = getMouseDirection(this, e);
+        var direction = Utils.getMouseDirection(this, e);
         var mask = $(this).find('.mask');
         mask.stop().animate({
             left: workItemsMaskPos[direction][0],
             top: workItemsMaskPos[direction][1]
         }, 200);
+    }).each(function() {
+        this.style.backgroundColor = 'rgba(0,0,0,.1)';//Utils.getRandomColor()
     });
-
-    function getMouseDirection(obj, e) {
-
-        var $obj = $(obj),
-            w = $obj.width(),
-            h = $obj.height(),
-            x = (e.pageX - $obj.offset().left - (w / 2)) * (w > h ? (h / w) : 1),
-            y = (e.pageY - $obj.offset().top - (h / 2)) * (h > w ? (w / h) : 1);
-
-        return  Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; 
-
-    }
 
     // 团队成员气泡切换效果
     var quotePops = $('#jQuotePops');
