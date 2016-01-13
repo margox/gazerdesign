@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: 'http://static.gazer.design/js/libs/',
+    baseUrl: '//static.gazer.design/js/libs/',
     shim: {
         'owlCarousel': ['jquery']
     },
@@ -10,7 +10,6 @@ require.config({
         'owlCarousel': 'owl.carousel.min'
     }
 });
-
 if (!Function.prototype.bind) {
     require(['html5shiv.min']);
 }
