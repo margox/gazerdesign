@@ -1,7 +1,7 @@
 define(function(require) {
     'use strict';
 
-    ~function() {
+    return function() {
 
         var Utils = require('utils');
         require('jquery');
@@ -165,6 +165,6 @@ define(function(require) {
             return false;
         });
 
-    }();
+    }
 
 });
