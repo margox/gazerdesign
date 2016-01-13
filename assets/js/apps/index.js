@@ -1,6 +1,6 @@
 define(function(require) {
     'use strict';
-
+alert(1);
     var Utils = require('utils');
     require('jquery');
     require('owlCarousel');
